@@ -1,0 +1,22 @@
+<h1>Bienvenu sur le site e-commerce</h1>
+<h2>Voici les articles en vente</h2>
+<h3><a href="/users/logout">Se deconnecter</a></h3>
+
+<table>
+<% @article.each do |article| %>
+  <tr>
+    <td>
+      <%= article.name %>
+    </td>
+    <td>
+      <%= article.description %>
+    </td>
+    <td>
+      <%= article.prix %>
+    </td>
+    <td>
+      <p><%= link_to "Acheter l article", controller: "transferts", action: "credit", id: article.id,message: "achat de l'article" %></p>
+    </td>
+  </tr>
+<% end %>
+</table>

@@ -1,0 +1,18 @@
+<h1>Voici vos commande</h1>
+<h3><a href="/users/logout">Se deconnecter</a></h3>
+
+<table>
+  <% @orders.each do |order| %>
+    <tr>
+      <td>
+        <%= order.id %>
+      </td>
+      <td>
+        <%= order.article_id %>
+      </td>
+      <td>
+        <p><%= link_to "Revendre l article", controller: "transferts", action: "debit", id: order.article_id,message: "remboursement" %></p>
+      </td>
+    </tr>
+  <% end %>
+</table>
